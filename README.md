@@ -42,6 +42,7 @@ install the needed dependacies
 To train a new model:
 
 ```
+file_path = "dataset/claims_dummy_data.csv"
 TrainModel(RandomForestClassifier(), file_path)
 ```
 To use the trained model for predictions:
@@ -59,6 +60,6 @@ test_data = pd.DataFrame({
     'Vehicle_Age': ['< 1 Year', '< 1 Year', '1-2 Year'],
     'Age': [25, 32, 45],
 })
-
+model = RandomForestClassifier()
 Predict(model,test_data)
 ```

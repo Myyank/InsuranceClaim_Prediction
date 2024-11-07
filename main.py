@@ -4,9 +4,9 @@ import joblib
 from Preprocess import preprocess
 import os
 from config import extract_encodings,accuracy_score
-# from xgboost import XGBClassifier
+from xgboost import XGBClassifier
 from sklearn.ensemble import RandomForestClassifier
-# import lightgbm as lgb
+import lightgbm as lgb
 
 Model_PATH = 'saved_models'
 

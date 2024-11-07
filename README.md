@@ -35,7 +35,7 @@ preprocess:Preprocess the data by applying the necessary encodings and transform
 
 ## Sample Usage Workflow
 
-install the needed dependacies 
+Install the required dependencies 
 ```
 !pip install requirements.txt
 ```

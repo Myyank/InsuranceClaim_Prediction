@@ -3,35 +3,30 @@
 ##  main.py:-
 This is the main script that performs model training and prediction.
 
-Extract Data:
-The extract_data function loads the data, encodes categorical features, and preprocesses it.
+Extract Data: The extract_data function loads the data, encodes categorical features, and preprocesses it.
 It calls extract_encodings to save the encoders for categorical variables.
 
-Train Model:
-The TrainModel function trains a given model (e.g., RandomForestClassifier) on the preprocessed data.
+Train Model: The TrainModel function trains a given model (e.g., RandomForestClassifier) on the preprocessed data.
 It saves the trained model and prints the validation accuracy.
 
-Predict:
-The Predict function loads the saved model and uses it to make predictions on new test data.
+Predict: The Predict function loads the saved model and uses it to make predictions on new test data.
 The function expects the model to be saved in the Model_PATH directory.
 
 ##  config.py :- 
 This file handles encoding and accuracy calculation functions.
 
-Extract Encodings:
-The extract_encodings function creates and fits encoders for categorical features, including label encoders and target encoders.
+Extract Encodings: The extract_encodings function creates and fits encoders for categorical features, including label encoders and target encoders.
 It saves these encoders to disk for use during preprocessing.
-Accuracy Score:
 
-Calculates the accuracy of model predictions.
+Accuracy Score: Calculates the accuracy of model predictions.
 
 
 ##  Preprocess.py :- 
 This file preprocesses the data by loading saved encoders and applying necessary transformations.
 
-extract_encodings:Loads previously saved encodings
+extract_encodings: Loads previously saved encodings
 
-preprocess:Preprocess the data by applying the necessary encodings and transformations.
+preprocess: Preprocess the data by applying the necessary encodings and transformations.
 
 ## Sample Usage Workflow
 

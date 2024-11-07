@@ -4,9 +4,9 @@ import joblib
 from Preprocess import preprocess
 import os
 from config import extract_encodings,accuracy_score
-from xgboost import XGBClassifier
+# from xgboost import XGBClassifier
 from sklearn.ensemble import RandomForestClassifier
-import lightgbm as lgb
+# import lightgbm as lgb
 
 Model_PATH = 'saved_models'
 
@@ -59,7 +59,8 @@ def TrainModel(model,data_file):
     X_train, X_test, y_train, y_test = train_test_split(preprocessed_data, target, test_size=0.20, random_state=10, shuffle=True)
 
     classifier.fit(X_train,y_train)
-    
+    os.makedirs(Model_PATH, exist_ok=True)
+
     joblib.dump(classifier, os.path.join(Model_PATH, type(classifier).__name__+'.pkl'))
 
     print('Model trained and saved')
@@ -95,12 +96,11 @@ def Predict(model,test_data):
 Method to Produce the Result :
 
 Train New Model :
-file_path = ""
+
+file_path = "dataset/claims_dummy_data.csv"
 TrainModel(RandomForestClassifier(),file_path)
 
-Inference on already saved models :
-
-
+Inference on your saved models :
 
 test_data = pd.DataFrame({
     'Claim ID':[123,345,123],
@@ -121,3 +121,4 @@ Predict(model,test_data)
 
 
 """
+

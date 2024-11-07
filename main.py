@@ -70,7 +70,7 @@ def TrainModel(model,data_file):
     print("Model Accuracy on validation set : ",accuracy_score(y_test, y_pred))
 
 
-def Predict(test_data):
+def Predict(model,test_data):
 
     """
     Loads the pre-trained classifier and uses it to make predictions on the provided test data.
@@ -82,7 +82,7 @@ def Predict(test_data):
     - None: Prints the predicted labels for the test data.
     """
 
-    classifier = joblib.load(os.path.join('Model_PATH', 'RandomForest.pkl'))
+    classifier = joblib.load(os.path.join(Model_PATH, type(model).__name__+'.pkl'))
     data = extract_data(test_data)
 
     print("Model prediction ",classifier.predict(data))
@@ -116,7 +116,7 @@ test_data = pd.DataFrame({
 })
 
 
-Predict(test_data)
+Predict(model,test_data)
 
 
 
